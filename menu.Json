@@ -1,0 +1,35 @@
+class submenu{
+constructor(name,status,url) {
+this.name=name;
+this.status=status;
+this.url=url;
+}
+}
+class category{
+constructor(name,status) {
+this.name=name;
+this.status=status;
+this.submenu=submenu;
+}
+}
+class menu{
+constructor(name,status) {
+this.name=name;
+this.status=status;
+this.category=cat;
+}
+}
+var submenua = new submenu("Running","y","Running.html");
+var submenub = new submenu("Train","y","train.html");
+var submenuc = new submenu("bike","y","bike.html");
+var submenuArr=[];
+submenuArr.push(submenua)
+submenuArr.push(submenub)
+submenuArr.push(submenuc)
+var cat= new category("Sports","y",submenuArr);
+var cat2= new category("clothes","y",submenuArr);
+var catArr=[cat,cat2];
+var menu1= new menu("Men","y",catArr)
+var menu2= new menu("Women","y",catArr)
+var menuArr=[menu1,menu2]
+var json= JSON.stringify(menuArr);
